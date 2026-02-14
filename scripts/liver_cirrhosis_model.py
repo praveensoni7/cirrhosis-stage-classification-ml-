@@ -386,7 +386,7 @@ st.caption("Built with Streamlit • Tuned with GridSearchCV • Designed for cl
 #================== without uploading dataset ===================#
 st.write("Enter patient details to predict Liver Cirrhosis Stage without uploading dataset.")
 
-model_path = os.path.join("scripts", "Liver_disease_model.pkl")
+model_path = os.path.join("script","Liver_disease_pipeline.pkl")
 model = joblib.load(model_path)
 
 FEATURE_COLUMNS = [
@@ -396,7 +396,7 @@ FEATURE_COLUMNS = [
     'Albumin', 'Status', 'Sex', 'Tryglicerides',
     'Hepatomegaly', 'Edema'
 ]
-
+#"scripts"
 # ======================================
 # Sidebar Inputs
 N_Days = st.slider("N_Days", 1, 5000, 1000)
