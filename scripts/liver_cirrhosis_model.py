@@ -397,7 +397,6 @@ FEATURE_COLUMNS = [
     'Hepatomegaly', 'Edema'
 ]
 
-X_transformed = model.named_steps['preprocessor'].transform(input_data)
 
 # Build DataFrame with correct columns
 input_data = pd.DataFrame([{
