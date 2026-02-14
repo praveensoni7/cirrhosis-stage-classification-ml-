@@ -386,8 +386,8 @@ st.caption("Built with Streamlit • Tuned with GridSearchCV • Designed for cl
 #================== without uploading dataset ===================#
 st.write("Enter patient details to predict Liver Cirrhosis Stage without uploading dataset.")
 
-model = joblib.load(r"scripts\Liver_disease_model.pkl")
-scaler = joblib.load(r"scripts\scaler.pkl")
+model = joblib.load("scripts","Liver_disease_model.pkl")
+scaler = joblib.load("scripts","scaler.pkl")
 
 FEATURE_COLUMNS = [
     'N_Days', 'Spiders', 'Prothrombin', 'SGOT', 'Drug',
