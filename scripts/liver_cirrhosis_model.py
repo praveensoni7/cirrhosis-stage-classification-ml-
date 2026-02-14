@@ -397,8 +397,7 @@ FEATURE_COLUMNS = [
     'Hepatomegaly', 'Edema'
 ]
 
-# Sidebar Inputs
-# Sidebar Inputs (aligned with dataset schema)
+# Sidebar Inputs (aligned with training dataset)
 N_Days = st.slider("N_Days", 1, 5000, 1000)
 
 Status = st.selectbox("Status", ["C", "D"])          # categorical
@@ -421,29 +420,29 @@ Tryglicerides = st.number_input("Tryglicerides", min_value=50.0, max_value=500.0
 Platelets = st.number_input("Platelets", min_value=50.0, max_value=500.0, value=200.0)
 Prothrombin = st.number_input("Prothrombin", min_value=9.0, max_value=20.0, value=10.0)
 
-# Build DataFrame with correct columns
+# Build DataFrame with correct schema
 input_data = pd.DataFrame([{
     "N_Days": N_Days,
-    "Spiders": Spiders,
-    "Prothrombin": Prothrombin,
-    "SGOT": SGOT,
+    "Status": Status,
     "Drug": Drug,
     "Age": Age,
+    "Sex": Sex,
     "Ascites": Ascites,
-    "Platelets": Platelets,
-    "Cholesterol": Cholesterol,
+    "Hepatomegaly": Hepatomegaly,
+    "Spiders": Spiders,
+    "Edema": Edema,
     "Bilirubin": Bilirubin,
+    "Cholesterol": Cholesterol,
+    "Albumin": Albumin,
     "Copper": Copper,
     "Alk_Phos": Alk_Phos,
-    "Albumin": Albumin,
-    "Status": Status,
-    "Sex": Sex,
+    "SGOT": SGOT,
     "Tryglicerides": Tryglicerides,
-    "Hepatomegaly": Hepatomegaly,
-    "Edema": Edema
+    "Platelets": Platelets,
+    "Prothrombin": Prothrombin
 }])
 
-# Predict directly
+# Predict directly with pipeline
 if st.button("Predict"):
     prediction = model.predict(input_data)
     st.success(f"Predicted Cirrhosis Stage: {prediction[0]}")
