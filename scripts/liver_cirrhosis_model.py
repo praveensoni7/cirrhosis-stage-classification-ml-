@@ -399,8 +399,7 @@ FEATURE_COLUMNS = [
 
 X_transformed = model.named_steps['preprocessor'].transform(input_data)
 
-# ======================================
-# Sidebar Inputs
+# Build DataFrame with correct columns
 input_data = pd.DataFrame([{
     "N_Days": N_Days,
     "Spiders": Spiders,
@@ -422,10 +421,7 @@ input_data = pd.DataFrame([{
     "Edema": Edema
 }])
 
-
-
-# ======================================
-# Predict (pipeline handles preprocessing)
+# Predict directly
 if st.button("Predict"):
     prediction = model.predict(input_data)
     st.success(f"Predicted Cirrhosis Stage: {prediction[0]}")
