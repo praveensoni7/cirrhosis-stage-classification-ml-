@@ -431,5 +431,5 @@ input_data = pd.DataFrame([[
 # ======================================
 # Predict (pipeline handles preprocessing)
 if st.button("Predict"):
-    prediction = model.predict(input_data)
+    prediction = model.predict([input_data])
     st.success(f"Predicted Cirrhosis Stage: {prediction[0]}")
