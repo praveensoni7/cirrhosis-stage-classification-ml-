@@ -398,24 +398,28 @@ FEATURE_COLUMNS = [
 ]
 
 # Sidebar Inputs
+# Sidebar Inputs (aligned with dataset schema)
 N_Days = st.slider("N_Days", 1, 5000, 1000)
-Spiders = st.selectbox("Spiders", [0, 1])
-Prothrombin = st.slider("Prothrombin", 10.0, 25.0, 15.0)
-SGOT = st.slider("SGOT", 10, 500, 100)
-Drug = st.selectbox("Drug", [0, 1])
-Age = st.slider("Age", 18, 100, 50)
-Ascites = st.selectbox("Ascites", [0, 1])
-Platelets = st.slider("Platelets", 50, 500, 200)
-Cholesterol = st.slider("Cholesterol", 100, 400, 200)
-Bilirubin = st.slider("Bilirubin", 0.1, 10.0, 1.0)
-Copper = st.slider("Copper", 10, 200, 50)
-Alk_Phos = st.slider("Alk_Phos", 50, 500, 150)
-Albumin = st.slider("Albumin", 2.0, 5.0, 3.5)
-Status = st.selectbox("Status", [0, 1])
-Sex = st.selectbox("Sex", [0, 1])
-Tryglicerides = st.slider("Tryglicerides", 50, 500, 150)
-Hepatomegaly = st.selectbox("Hepatomegaly", [0, 1])
-Edema = st.selectbox("Edema", [0, 1])
+
+Status = st.selectbox("Status", ["C", "D"])          # categorical
+Drug = st.selectbox("Drug", ["Placebo", "DPCA"])     # categorical
+Age = st.slider("Age", 18, 100, 50)                  # numeric (years)
+
+Sex = st.selectbox("Sex", ["M", "F"])                # categorical
+Ascites = st.selectbox("Ascites", ["Y", "N"])        # categorical
+Hepatomegaly = st.selectbox("Hepatomegaly", ["Y", "N"])
+Spiders = st.selectbox("Spiders", ["Y", "N"])
+Edema = st.selectbox("Edema", ["Y", "N", "S"])       # note: "S" appears in dataset
+
+Bilirubin = st.number_input("Bilirubin", min_value=0.1, max_value=20.0, value=1.0)
+Cholesterol = st.number_input("Cholesterol", min_value=100.0, max_value=400.0, value=200.0)
+Albumin = st.number_input("Albumin", min_value=2.0, max_value=5.0, value=3.5)
+Copper = st.number_input("Copper", min_value=10.0, max_value=200.0, value=50.0)
+Alk_Phos = st.number_input("Alk_Phos", min_value=50.0, max_value=500.0, value=150.0)
+SGOT = st.number_input("SGOT", min_value=10.0, max_value=500.0, value=100.0)
+Tryglicerides = st.number_input("Tryglicerides", min_value=50.0, max_value=500.0, value=150.0)
+Platelets = st.number_input("Platelets", min_value=50.0, max_value=500.0, value=200.0)
+Prothrombin = st.number_input("Prothrombin", min_value=9.0, max_value=20.0, value=10.0)
 
 # Build DataFrame with correct columns
 input_data = pd.DataFrame([{
