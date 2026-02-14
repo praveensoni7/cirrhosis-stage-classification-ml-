@@ -31,7 +31,7 @@ Liver cirrhosis is a progressive disease where accurate staging is critical for 
 - Data Source: Publicly available medical datasets in kaggle.
 - Target: Cirrhosis stage classification (c:Censored,CL:censored-Liver Transplant,D:death)
 
-![Liver Cirrhosis image](Liver Disease Cirrhosis.png)
+![Liver Cirrhosis image](Liver_Disease_Cirrhosis.png)
 
 ---
 <h2><a class="anchor" id="tool--technologies"></a>Tools & Techologies</h2>
