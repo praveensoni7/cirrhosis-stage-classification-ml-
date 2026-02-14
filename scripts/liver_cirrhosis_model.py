@@ -397,6 +397,25 @@ FEATURE_COLUMNS = [
     'Hepatomegaly', 'Edema'
 ]
 
+# Sidebar Inputs
+N_Days = st.slider("N_Days", 1, 5000, 1000)
+Spiders = st.selectbox("Spiders", [0, 1])
+Prothrombin = st.slider("Prothrombin", 10.0, 25.0, 15.0)
+SGOT = st.slider("SGOT", 10, 500, 100)
+Drug = st.selectbox("Drug", [0, 1])
+Age = st.slider("Age", 18, 100, 50)
+Ascites = st.selectbox("Ascites", [0, 1])
+Platelets = st.slider("Platelets", 50, 500, 200)
+Cholesterol = st.slider("Cholesterol", 100, 400, 200)
+Bilirubin = st.slider("Bilirubin", 0.1, 10.0, 1.0)
+Copper = st.slider("Copper", 10, 200, 50)
+Alk_Phos = st.slider("Alk_Phos", 50, 500, 150)
+Albumin = st.slider("Albumin", 2.0, 5.0, 3.5)
+Status = st.selectbox("Status", [0, 1])
+Sex = st.selectbox("Sex", [0, 1])
+Tryglicerides = st.slider("Tryglicerides", 50, 500, 150)
+Hepatomegaly = st.selectbox("Hepatomegaly", [0, 1])
+Edema = st.selectbox("Edema", [0, 1])
 
 # Build DataFrame with correct columns
 input_data = pd.DataFrame([{
